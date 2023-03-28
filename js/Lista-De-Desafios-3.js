@@ -96,10 +96,24 @@ function  indAverageAndHighestSalary(peopleInformation) {
             console.log( `Maior Sálario R$${highestSalary}`)
             break
         }else {
-            averageSalary += salary
+            averageSalary += averageSalary + salary
             averageChildren += children
         }
     }
 }
 
 indAverageAndHighestSalary(people)
+
+// Faça um programa onde, você chame uma função que calcula a taxa mensal de juros de um investimento.
+// Você deve enviar como argumentos da função - Valor inicial investido - Valor atual do investimento
+// Tempo em meses, que o valor está investido a função deve Retornar a taxa de juros, já formatada. Ex: 2.5%.
+
+//Cálculo taxa = juros(Valor atual do investimento - valor inicial investido) / Valor inial investido * tempo
+
+function calculateValue (valorInicial, valorAtual, tempo) {
+    const juros = (valorAtual - valorInicial) / (valorInicial * tempo)
+
+    console.log((juros * 100).toFixed(2) + "%")
+}
+
+calculateValue(1000, 1200, 10)

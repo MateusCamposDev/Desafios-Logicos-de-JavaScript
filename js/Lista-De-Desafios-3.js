@@ -117,3 +117,75 @@ function calculateValue (valorInicial, valorAtual, tempo) {
 }
 
 calculateValue(1000, 1200, 10)
+
+const students = [
+    { name: "Mateus", age: 25 }, 
+    { name: "Keite", age: 19}, 
+    { name: "Bruna", age: 25}, 
+    { name: "Ana", age: 20}, 
+    { name: "Carla", age: 30}, 
+    { name: "Julio", age: 26}, 
+    { name: "João", age: 43}, 
+];
+
+let allStudentsAge = 0
+
+students.forEach((student) => {
+    allStudentsAge += student.age
+})
+
+const averageAge = allStudentsAge / students.length
+
+console.log(`A média dos alunos é de ${averageAge.toFixed(0)}`)
+
+// Crie um array de objetos com nome dos clientes e verifique se ele é vip, se ele for vip adicione ao setor Black caso contrario ao setor Greeen.
+// Faça isso utilizando o map e operador ternario.
+
+const list = [
+    {name: "Mateus", vip: true},
+    {name: "Keite", vip: false},
+    {name: "Julia", vip: true},
+    {name: "João", vip: true},
+    {name: "Pedro", vip: false},
+    {name: "Brenda", vip: true},
+    {name: "Apolo", vip: false},
+]
+
+const newList = list.map((client) => {
+    const newList = {
+        name: client.name,
+        vip: client.vip,
+        sector: client.vip ? "Black" : "Green"
+    }
+    return newList
+})
+console.log(newList)
+
+const studentsResult = [
+    {name: "Mateus", testGrade: 8},
+    {name: "Keite", testGrade: 10},
+    {name: "Julia", testGrade: 7},
+    {name: "João", testGrade: 4},
+    {name: "Pedro", testGrade: 2},
+    {name: "Brenda", testGrade: 5},
+    {name: "Apolo", testGrade: 6},
+]
+
+const approvedStudents = studentsResult.map((student) => {
+     let approvedOrNot
+
+     if(student.testGrade >= 7) {
+        approvedOrNot = "approved"
+     }else {
+        approvedOrNot = "disapproved"
+     }
+
+     const students = {
+        name: student.name,
+        finalResult: approvedOrNot
+     }
+
+     return students
+})
+
+console.log(approvedStudents)
